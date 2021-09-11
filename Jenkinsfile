@@ -7,10 +7,9 @@ pipeline{
         stage('NPM Install'){
             steps {
                 sh "pwd"
-                dir('your-sub-directory') {
-                sh "pwd"
+                dir('server') {
+                    sh "npm install"
                 }
-                sh "pwd"
             }
         }
         stage('Build'){
