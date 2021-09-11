@@ -4,12 +4,12 @@ pipeline{
         checkoutToSubdirectory('server')
     }
     stages{
-        stage(name: 'NPM Install'){
+        stage('NPM Install'){
             steps{
                 sh 'npm install'
             }
         }
-        stage(name: 'Build'){
+        stage('Build'){
             steps{
                 sh 'ng build'
             }
