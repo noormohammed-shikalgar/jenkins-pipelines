@@ -6,17 +6,14 @@ pipeline{
     stages{
         stage('NPM Install'){
             steps{
-                dir('server'){
-                    sh 'pwd'
-                    sh 'npm install'
-                }
+                sh 'cd server'
+                sh 'npm install'
             }
         }
         stage('Build'){
-            dir('server'){
-                steps{
-                    sh 'ng build'
-                }
+            steps{
+                sh 'cd server'
+                sh 'ng build'
             }
         }
     }
