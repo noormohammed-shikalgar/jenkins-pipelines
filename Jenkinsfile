@@ -5,15 +5,17 @@ pipeline{
     }
     stages{
         stage('NPM Install'){
-            steps{
-                sh 'cd server'
-                sh 'npm install'
+            steps {
+                sh "pwd"
+                dir('your-sub-directory') {
+                sh "pwd"
+                }
+                sh "pwd"
             }
         }
         stage('Build'){
             steps{
-                sh 'cd server'
-                sh 'ng build'
+                sh 'cd server && npm install && ng build'
             }
         }
     }
